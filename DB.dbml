@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PSIC_DB" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=N33M0Z\SQLEXPRESS;Initial Catalog=PSIC_DB;User ID=SA" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PSIC_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_cssMenu" Method="sp_cssMenu">
+    <Parameter Name="Emp_Id" Parameter="emp_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_cssMenuResult">
+      <Column Name="Module_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Module_Name" Type="System.String" DbType="VarChar(426)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Group_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cssMenuSub" Method="sp_cssMenuSub">
+    <Parameter Name="Module_ID" Parameter="module_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="User_Group_Id" Parameter="user_Group_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_cssMenuSubResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
