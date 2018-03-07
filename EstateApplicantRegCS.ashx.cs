@@ -35,7 +35,8 @@ namespace PSIC
                             string Path = context.Server.MapPath("~/Uploads/EstateCandidatePhoto/");
                             FileInfo fi = new FileInfo(FileName);
 
-                            Fn.Exec("update tbl_EstateApplicant set Name = '" + d[0] + "', CNIC = '" + d[1] + "', NTN = '" + d[2] + "', ContactNo = '" + d[3] + "', Address = '" + d[4] + "' PhotoExtension = '" + fi.Extension + "' where ApplicantID = " + NewEmpID);
+                            var x = "update tbl_EstateApplicant set Name = '" + d[0] + "', CNIC = '" + d[1] + "', NTN = '" + d[2] + "', ContactNo = '" + d[3] + "', Address = '" + d[4] + "', PhotoExtension = '" + fi.Extension + "' where ApplicantID = " + NewEmpID;
+                            Fn.Exec(x);
 
                             PostedFile.SaveAs(Path + Convert.ToString(NewEmpID) + fi.Extension);
                         }

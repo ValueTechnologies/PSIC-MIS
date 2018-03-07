@@ -100,7 +100,7 @@ namespace PSIC
         [WebMethod]
         public static string LoadSchemes() 
         {
-            return Fn.Data2Json("SELECT  ROW_NUMBER() over(order by tbl_EstateScheme.StartingDate) as Srno, tbl_EstateScheme.SchemeID, tbl_EstateScheme.TehsilID, tbl_EstateScheme.DistrictID, tbl_EstateScheme.Scheme,tbl_EstateScheme.GPS, tbl_EstateScheme.TotalAreaOfEstate, Format(tbl_EstateScheme.StartingDate, 'dd - MMM - yyyy') as StartingDate, TblTehsil.LocName as Tehsil, TblDistrict.LocName as District FROM tbl_EstateScheme INNER JOIN TblTehsil ON TblTehsil.TehsilID = tbl_EstateScheme.TehsilID INNER JOIN TblDistrict ON TblDistrict.DistrictID = tbl_EstateScheme.DistrictID");
+            return Fn.Data2Json("SELECT  ROW_NUMBER() over(order by tbl_EstateScheme.SchemeID desc) as Srno, tbl_EstateScheme.SchemeID, tbl_EstateScheme.TehsilID, tbl_EstateScheme.DistrictID, tbl_EstateScheme.Scheme,tbl_EstateScheme.GPS, tbl_EstateScheme.TotalAreaOfEstate, Format(tbl_EstateScheme.StartingDate, 'dd - MMM - yyyy') as StartingDate, TblTehsil.LocName as Tehsil, TblDistrict.LocName as District FROM tbl_EstateScheme INNER JOIN TblTehsil ON TblTehsil.TehsilID = tbl_EstateScheme.TehsilID INNER JOIN TblDistrict ON TblDistrict.DistrictID = tbl_EstateScheme.DistrictID");
         }
 
     }

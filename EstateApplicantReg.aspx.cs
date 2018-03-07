@@ -20,7 +20,7 @@ namespace PSIC
         [WebMethod]
         public static string LoadIndustrialist()
         {
-             return Fn.Data2Json("Select * from tbl_EstateApplicant");
+            return Fn.Data2Json("Select * from tbl_EstateApplicant order by tbl_EstateApplicant.ApplicantID desc");
         }
 
         [WebMethod]
